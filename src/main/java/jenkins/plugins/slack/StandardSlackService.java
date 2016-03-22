@@ -97,14 +97,14 @@ public class StandardSlackService implements SlackService {
                 String username = proxy.getUserName();
                 String password = proxy.getPassword();
                 // Consider it to be passed if username specified. Sufficient?
-                if (username != null && !"".equals(username.trim())) {
+                //if (username != null && !"".equals(username.trim())) {
                     logger.info("Using proxy authentication (user=" + username + ")");
                     // http://hc.apache.org/httpclient-3.x/authentication.html#Proxy_Authentication
                     // and
                     // http://svn.apache.org/viewvc/httpcomponents/oac.hc3x/trunk/src/examples/BasicAuthenticationExample.java?view=markup
                     client.getState().setProxyCredentials(AuthScope.ANY,
                         new UsernamePasswordCredentials(username, password));
-                }
+                //}
             }
         }
         return client;
